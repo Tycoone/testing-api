@@ -1,0 +1,560 @@
+get posts
+
+
+var settings = {
+  "url": "tycoone.me/api/posts/",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Public
+ENVIRONMENT 
+LAYOUT 
+LANGUAGE 
+Tycoones
+
+Social media for entrepreneurs
+
+Auth
+
+For Authentication
+
+POST Login User
+tycoone.me/api/users/login
+BODY formdata
+emailmabadejeda1@gmail.com
+password12345678
+
+Example Request
+Login User
+var form = new FormData();
+form.append("email", "mabadejeda1@gmail.com");
+form.append("password", "12345678");
+
+var settings = {
+  "url": "tycoone.me/api/users/login",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+Connection
+
+For Connecting of Users i.e sending connection requests, accepting connection request and deleting request and connection
+
+GET Accept Connection 
+tycoone.me/api/connections/accept/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+Accept Connection
+var settings = {
+  "url": "tycoone.me/api/connections/accept/2",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Messaging
+
+requests for messaging
+
+POST New Message 
+tycoone.me/api/messages/newmessage/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+BODY formdata
+messagehi
+typetext
+
+Example Request
+New Message
+var form = new FormData();
+form.append("message", "hi");
+form.append("receiver_id", "2");
+form.append("type", "text");
+
+var settings = {
+  "url": "tycoone.me/api/messages/newmessage/2",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": "Message sent Successfully "
+}
+GET tycoone.me/api/messages/getchats 
+tycoone.me/api/messages/getchats
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+tycoone.me/api/messages/getchats
+var settings = {
+  "url": "tycoone.me/api/messages/getchats",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+POST Get Messages of a user 
+tycoone.me/api/messages/getmessages/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+BODY formdata
+receiver_id2
+
+Example Request
+Get Messages of a user
+var form = new FormData();
+form.append("receiver_id", "2");
+
+var settings = {
+  "url": "tycoone.me/api/messages/getmessages/2",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+Example Response
+200 OK
+Body Headers (11)
+[
+  {
+    "id": "1",
+    "sender_id": "1",
+    "receiver_id": "2",
+    "type": "text",
+    "file": "null",
+    "timestamp": "2020-06-20 04:51:18",
+    "chat_id": "1",
+    "message": "hey man",
+    "status": "sent"
+  },
+  {
+    "id": "2",
+    "sender_id": "1",
+Posts
+
+POST Add Post 
+tycoone.me/api/posts/add
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+BODY formdata
+captionawesome stuff
+file[]
+file[]
+
+Example Request
+Add Post (405) 
+var settings = {
+  "url": "tycoone.me/api/posts/add",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+405 Method Not Allowed
+Body Headers (14)
+{
+  "error": {
+    "code": 405,
+    "message": {
+      "Request Error": "Method not Allowed "
+    }
+  }
+}
+POST Update Post 
+tycoone.me/api/posts/edit/1
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+BODY formdata
+captionedited
+
+Example Request
+Update Post (405) 
+var settings = {
+  "url": "tycoone.me/api/posts/edit/1",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+405 Method Not Allowed
+Body Headers (14)
+{
+  "error": {
+    "code": 405,
+    "message": {
+      "Request Error": "Method not Allowed "
+    }
+  }
+}
+GET Get Posts 
+tycoone.me/api/posts/
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+Get Posts 
+var settings = {
+  "url": "tycoone.me/api/posts/",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": {
+    "posts": [
+      {
+        "id": "1",
+        "user_id": "1",
+        "caption": "awesome stuff",
+        "no_of_likes": "0",
+        "no_of_comments": "0",
+        "no_of_shares": "0",
+        "timestamp": "2020-06-11 14:32:22",
+        "firstname": "Daniel",
+        "lastname": "barca",
+        "email": "mabadejeda1@gmail.com",
+GET View Single Post 
+tycoone.me/api/posts/show/1
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+View Single Post 
+var settings = {
+  "url": "tycoone.me/api/posts/show/1",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": {
+    "post": {
+      "id": "1",
+      "user_id": "1",
+      "caption": "Hello World",
+      "no_of_likes": "1",
+      "no_of_comments": "2",
+      "no_of_shares": "0",
+      "timestamp": "2020-06-19 08:58:50"
+    },
+    "user": {
+      "id": "1",
+      "firstname": "Daniel",
+POST Like Post 
+tycoone.me/api/posts/like/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+Already Liked Post 
+var settings = {
+  "url": "tycoone.me/api/posts/like/1",
+  "method": "POST",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+401 Unauthorized
+Body Headers (14)
+{
+  "error": {
+    "code": 401,
+    "message": {
+      "Error": "You have already liked"
+    }
+  }
+}
+POST Comment on Post 
+tycoone.me/api/posts/comment/1
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+BODY formdata
+commentAwesome
+typetext
+
+Example Request
+Comment on Post (200) 
+var form = new FormData();
+form.append("comment", "Awesome");
+form.append("type", "text");
+
+var settings = {
+  "url": "tycoone.me/api/posts/comment/1",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": "Comment Successful"
+}
+GET Get Comments of a Post 
+tycoone.me/api/posts/getcomment/1
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+Get Comments of a Post
+var settings = {
+  "url": "tycoone.me/api/posts/getcomment/1",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "post_id": "1",
+      "comment": "Awesome",
+      "type": "text",
+      "file": null,
+      "timestamp": "2020-06-19 08:56:16"
+    },
+    {
+      "id": "2",
+      "user_id": "1",
+Profile
+
+GET View Logged User Profile 
+tycoone.me/api/profile/
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+View Logged User Profile
+var settings = {
+  "url": "tycoone.me/api/profile/",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": [
+    {
+      "id": "1",
+      "firstname": "Daniel",
+      "lastname": "barca",
+      "email": "mabadejeda1@gmail.com",
+      "password": "$2y$10$rxavVowQfdqPiFlazCTPwOIHCRC7t56BaxG48CdFsF2ddXe3lWfyi",
+      "phone": null,
+      "timestamp": "2020-06-19 10:32:48",
+      "user_id": "1",
+      "gender": "male",
+      "buisness_category": "Tech"
+    }
+GET Show User Profile 
+tycoone.me/api/profile/show/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+Show User Profile
+var settings = {
+  "url": "tycoone.me/api/profile/show/2",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (14)
+{
+  "code": 200,
+  "message": [
+    {
+      "id": "2",
+      "firstname": "Daniel",
+      "lastname": "barca",
+      "email": "mabadejeda1f@gmail.com",
+      "password": "$2y$10$oJfV6QkZ1avoUPK1NSFOHuclOiNnB5v3E9lQFhPXbhDL9RwoKqVRG",
+      "phone": null,
+      "timestamp": "2020-06-11 14:33:24",
+      "user_id": "2",
+      "gender": "male",
+      "buisness_category": null
+    }
+GET tycoone.me/api/messages/getchats 
+tycoone.me/api/messages/getchats/2
+AUTHORIZATION
+
+Bearer Token
+
+Token<token>
+
+Example Request
+tycoone.me/api/messages/getchats
+var settings = {
+  "url": "tycoone.me/api/messages/getchats",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+Example Response
+200 OK
+Body Headers (11)
+[
+  {
+    "id": "1",
+    "sender_id": "1",
+    "receiver_id": "3",
+    "message": "heyoo",
+    "status": "sent",
+    "timestamp": "2020-06-20 04:57:27",
+    "firstname": "Daniel"
+  },
+  {
+    "id": "2",
+    "sender_id": "2",
+    "receiver_id": "1",
+    "message": "how far ",
+TYCOONES
+
+Introduction
+Auth
+Connection
+Messaging
+Posts
+Profile
+GET
+tycoone.me/api/messages/getchats
