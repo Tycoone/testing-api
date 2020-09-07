@@ -3,7 +3,7 @@ form.append("email", "mabadejeda1@gmail.com");
 form.append("password", "12345678");
 
 var settings = {
-  "url":"http://api-tycoone.tk/api/users/login",
+  "url":"https://api-tycoone.tk/api/users/login",
   "method": "POST",
   "timeout": 0,
   "processData": false,
